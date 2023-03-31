@@ -5,13 +5,23 @@ import java.time.LocalDateTime;
 
 public class Message implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	// private static final long serialVersionUID = 1L;
 
-	private String sender;
+	private User sender;
 	private MessageType type;
 	private String content;
 	private LocalDateTime sendedDate;
 	private LocalDateTime receptionDate;
+
+	public Message(User sender, MessageType type, String content, LocalDateTime sendedDate,
+			LocalDateTime receptionDate) {
+		super();
+		this.sender = sender;
+		this.type = type;
+		this.content = content;
+		this.sendedDate = sendedDate;
+		this.receptionDate = receptionDate;
+	}
 
 	public MessageType getType() {
 		return type;
@@ -29,11 +39,11 @@ public class Message implements Serializable {
 		this.content = content;
 	}
 
-	public String getSender() {
+	public User getSender() {
 		return sender;
 	}
 
-	public void setSender(String sender) {
+	public void setSender(User sender) {
 		this.sender = sender;
 	}
 
